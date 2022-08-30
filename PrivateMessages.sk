@@ -1,0 +1,11 @@
+# Permet d'envoyer des messages a des joueur avec la commande /msg ou /m !
+
+command /msg <player> <texts>:
+    aliases: /msg, /m
+    usage: &cSyntaxe: /msg <joueur> <message>
+    trigger:
+    if arg 1 is player:
+          send "&cTu ne peut pas envoyer un message a toi même !" to player
+      stop
+        send "&c[&f%player% &8-> &fMoi &c] %arg-2%" to arg-1
+        send "&c[&fMoi &8-> &f%player%] %arg-2%" to player
